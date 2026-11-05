@@ -1,0 +1,39 @@
+{
+  "title": "The armed configuration: standing prevention outperforms after-the-fact rescue in a dynamical model of self-regulation collapse",
+  "upload_type": "publication",
+  "publication_type": "preprint",
+  "creators": [
+    {
+      "name": "Marshall, Jaye Timothy",
+      "orcid": "0009-0002-5209-8161",
+      "affiliation": "Independent"
+    }
+  ],
+  "description": "<p>In-silico experiment on the archived five-state dpdr model of self-regulation collapse: does the original collapse episode still reach the stuck attractor when the model runs under a post-recovery configuration (pre-armed rescue, held setpoint, standing maintenance floor) instead of the unarmed conditions of the original measurements?</p><p>Answer (MEASURED, simulation): no, on every armed arm. The standing floor alone prevents collapse at 1/12 of the strength the after-the-fact rescue requires, with no timing requirement. The held setpoint alone prevents it structurally (the effective switch threshold rises above the demand ceiling at any dose). The escalating response ladder is the worst armed strategy tested: arriving late at a lower tier loses to sustained-from-the-first-moment everywhere, and the tell fires after the response window in short-episode cells.</p><p>Companion artifacts: the model paper deposit (concept DOI 10.5281/zenodo.22943641) and the single-subject record paper (doi:10.5281/zenodo.23965749).</p>",
+  "keywords": [
+    "AI safety",
+    "self-regulation",
+    "dynamical systems",
+    "pre-commitment",
+    "corrigibility",
+    "rescue vs prevention",
+    "autoethnography companion"
+  ],
+  "license": "mit",
+  "access_right": "open",
+  "related_identifiers": [
+    {
+      "identifier": "10.5281/zenodo.22943641",
+      "relation": "isDerivedFrom",
+      "resource_type": "dataset",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.5281/zenodo.23965749",
+      "relation": "references",
+      "resource_type": "publication-preprint",
+      "scheme": "doi"
+    }
+  ],
+  "version": "v1.0"
+}

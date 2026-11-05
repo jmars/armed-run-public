@@ -1,0 +1,116 @@
+[19:36:33] armed-run experiment start
+[19:36:33] PART 0: baseline reproduction
+  canonical episode unarmed T=1800: G_end=0.0485 G_min=0.0485 E_end=+0.4969 c_end=1.000 S_end=0.1525 a_end=0.8824 stuck=True
+  max post-episode G = 0.0531 (no self-recovery); regime=depersonalized tax=failure
+  regime gates: {'G1': True, 'G2': True, 'G2b': True, 'G2c': True}
+  E first > 0 at t=107.95 (a=0.871, G=0.555) -> pre-arm trigger
+[19:36:36] PART 0d: dose-response bisections
+  threshold ep_duration  = 66.3255   (bracket [66.3250,66.3260])
+  threshold ep_intensity = 0.5996   (bracket [0.5992,0.6000])
+  threshold pulse_amp    = 0.186   (bracket [0.1855,0.1865])
+  threshold alpha_G      = 0.8872   (bracket [0.8869,0.8875])
+  threshold Theta        = 0.4419   (bracket [0.4416,0.4422])
+  threshold g0           = 0.7026   (bracket [0.7022,0.7029])
+[19:38:17] PART 0e: 816-run rescue grid
+  class fractions: failure=0.630  transient=0.000  full=0.370  no-collapse=0.000
+  unarmed minimal effective strength u*(delay,duration):
+        dur    10     20     30     40     60     80    120    200
+  delay   30    -     0.90   0.60   0.50   0.40   0.40   0.35   0.35
+  delay   60    -      -     0.70   0.55   0.45   0.45   0.40   0.35
+  delay  100    -      -     0.90   0.70   0.55   0.50   0.45   0.40
+  delay  200    -      -      -     0.95   0.70   0.60   0.50   0.45
+  delay  400    -      -      -      -     0.85   0.70   0.60   0.45
+  delay  600    -      -      -      -     0.95   0.75   0.60   0.50
+  recomputed taxonomy vs archived rescue_taxonomy: 23/23
+[19:39:26] PART 1: arm grids (17 x 8)
+  (a) pre-armed step rescue from E>0: no-collapse=0.71  partial-transient=0.00  full-collapse=0.29
+      u* (min strength -> no-collapse) by duration 10:- 20:- 30:0.45 40:0.25 60:0.2 80:0.2 120:0.2 200:0.2
+  (a) pre-armed escalating rescue (3 tiers): no-collapse=0.65  partial-transient=0.00  full-collapse=0.35
+      u* (min strength -> no-collapse) by duration 10:- 20:- 30:0.7 40:0.35 60:0.2 80:0.2 120:0.2 200:0.2
+  (a)+(b) step rescue + S held: no-collapse=1.00  partial-transient=0.00  full-collapse=0.00
+      u* (min strength -> no-collapse) by duration 10:0.2 20:0.2 30:0.2 40:0.2 60:0.2 80:0.2 120:0.2 200:0.2
+  (a)+(b)+(c) + standing floor 0.10: no-collapse=1.00  partial-transient=0.00  full-collapse=0.00
+      u* (min strength -> no-collapse) by duration 10:0.2 20:0.2 30:0.2 40:0.2 60:0.2 80:0.2 120:0.2 200:0.2
+  (b) S held, no rescue: no-collapse=1.00  partial-transient=0.00  full-collapse=0.00
+      u* (min strength -> no-collapse) by duration 10:0.2 20:0.2 30:0.2 40:0.2 60:0.2 80:0.2 120:0.2 200:0.2
+  (c) floor only, no rescue: no-collapse=1.00  partial-transient=0.00  full-collapse=0.00
+      u* (min strength -> no-collapse) by duration 10:0.2 20:0.2 30:0.2 40:0.2 60:0.2 80:0.2 120:0.2 200:0.2
+[19:40:07] PART 1b: fine strength grid 0-0.30
+  (a) pre-armed step rescue from E>0: u* = 10:- 20:- 30:- 40:0.22 60:0.09 80:0.04 120:0.03 200:0.03
+  (a)+(b) step rescue + S held: u* = 10:0.0 20:0.0 30:0.0 40:0.0 60:0.0 80:0.0 120:0.0 200:0.0
+[19:40:31] pool parts done (237s)
+[19:40:31] PART 2: armed dose-response bisections
+  unarmed        duration threshold 66.32   intensity threshold 0.5997
+  A_step_u0.04   duration threshold 127.78   intensity threshold NONE(>1.0)
+  A_step_u0.8    duration threshold NONE(>400)   intensity threshold NONE(>1.0)
+  A_esc3_u0.8    duration threshold NONE(>400)   intensity threshold NONE(>1.0)
+  B_only         duration threshold NONE(>400)   intensity threshold NONE(>1.0)
+  AB             duration threshold NONE(>400)   intensity threshold NONE(>1.0)
+  ABC            duration threshold NONE(>400)   intensity threshold NONE(>1.0)
+  C_only         duration threshold 392.72   intensity threshold NONE(>1.0)
+[19:42:23] PART 3: mechanism decomposition
+  S held at 0.9545: G_min=0.1317 c_max=0.000 E_max=0.526 Teff_min=0.640 |S-held|max=1.54e-01 -> no-collapse
+  S held at 0.9000: G_min=0.1317 c_max=0.000 E_max=0.526 Teff_min=0.640 |S-held|max=1.00e-01 -> no-collapse
+  S held at 0.8000: G_min=0.1317 c_max=0.000 E_max=0.526 Teff_min=0.640 |S-held|max=5.70e-06 -> no-collapse
+  S held at 0.6000: G_min=0.0488 c_max=1.000 E_max=0.607 Teff_min=0.480 |S-held|max=2.00e-01 -> partial-transient
+  S held at 0.4000: G_min=0.0485 c_max=1.000 E_max=0.623 Teff_min=0.320 |S-held|max=4.00e-01 -> full-collapse
+  S held at 0.3000: G_min=0.0485 c_max=1.000 E_max=0.624 Teff_min=0.240 |S-held|max=5.00e-01 -> full-collapse
+  S held at 0.2000: G_min=0.0485 c_max=1.000 E_max=0.624 Teff_min=0.160 |S-held|max=6.00e-01 -> full-collapse
+  S held at 0.1500: G_min=0.0485 c_max=1.000 E_max=0.625 Teff_min=0.120 |S-held|max=6.50e-01 -> full-collapse
+  S held at 0.1000: G_min=0.0485 c_max=1.000 E_max=0.625 Teff_min=0.080 |S-held|max=7.00e-01 -> full-collapse
+  floor 0.000: G_min=0.0485 c_max=1.000 -> full-collapse
+  floor 0.010: G_min=0.0505 c_max=1.000 -> full-collapse
+  floor 0.020: G_min=0.0525 c_max=1.000 -> full-collapse
+  floor 0.030: G_min=0.1702 c_max=0.000 -> no-collapse
+  floor 0.040: G_min=0.1842 c_max=0.000 -> no-collapse
+  floor 0.050: G_min=0.1987 c_max=0.000 -> no-collapse
+  floor 0.075: G_min=0.2361 c_max=0.000 -> no-collapse
+  floor 0.100: G_min=0.2734 c_max=0.000 -> no-collapse
+  floor 0.150: G_min=0.3429 c_max=0.000 -> no-collapse
+  floor 0.200: G_min=0.4026 c_max=0.000 -> no-collapse
+  floor 0.300: G_min=0.4940 c_max=0.000 -> no-collapse
+  a-blind step u=0.04: G_min=0.0485 a_ep_mean=0.886 c_max=1.000 -> full-collapse
+  a-blind step u=0.10: G_min=0.0485 a_ep_mean=0.886 c_max=1.000 -> full-collapse
+  a-blind step u=0.20: G_min=0.0485 a_ep_mean=0.886 c_max=1.000 -> full-collapse
+  a-blind step u=0.40: G_min=0.0485 a_ep_mean=0.886 c_max=1.000 -> full-collapse
+  a-blind step u=0.80: G_min=0.0485 a_ep_mean=0.886 c_max=1.000 -> full-collapse
+  duty 1.00: G_min=0.0485 c_max=1.000 -> full-collapse   | +u0.04: G_min=0.1840 -> no-collapse
+  duty 0.75: G_min=0.1679 c_max=0.000 -> no-collapse   | +u0.04: G_min=0.2568 -> no-collapse
+  duty 0.50: G_min=0.2740 c_max=0.000 -> no-collapse   | +u0.04: G_min=0.4107 -> no-collapse
+  duty 0.35: G_min=0.3740 c_max=0.000 -> no-collapse   | +u0.04: G_min=0.5186 -> no-collapse
+  duty 0.25: G_min=0.4529 c_max=0.000 -> no-collapse   | +u0.04: G_min=0.5901 -> no-collapse
+  duty 0.15: G_min=0.5524 c_max=0.000 -> no-collapse   | +u0.04: G_min=0.6646 -> no-collapse
+  duty 0.10: G_min=0.6250 c_max=0.000 -> no-collapse   | +u0.04: G_min=0.7000 -> no-collapse
+  duty 0.05: G_min=0.7000 c_max=0.000 -> no-collapse   | +u0.04: G_min=0.7000 -> no-collapse
+  t_trig=100.00 u=0.04: G_min=0.1842 -> no-collapse
+  t_trig=104.00 u=0.04: G_min=0.1841 -> no-collapse
+  t_trig=107.95 u=0.04: G_min=0.1840 -> no-collapse
+  t_trig=120.00 u=0.04: G_min=0.1831 -> no-collapse
+  t_trig=140.00 u=0.04: G_min=0.1803 -> no-collapse
+  t_trig=160.00 u=0.04: G_min=0.1500 -> no-collapse
+  t_trig=180.00 u=0.04: G_min=0.0496 -> full-collapse
+  t_trig=200.00 u=0.04: G_min=0.0514 -> full-collapse
+[19:42:59] PART 4: closed-loop escalation
+  escalation cap=0.10 dur=    40: tiers=1 first_tell=178.85000000000002 G_min=0.0485 -> full-collapse
+  escalation cap=0.10 dur=   200: tiers=1 first_tell=None G_min=0.1746 -> no-collapse
+  escalation cap=0.10 dur=  1600: tiers=1 first_tell=None G_min=0.1746 -> no-collapse
+  escalation cap=0.20 dur=    40: tiers=1 first_tell=185.8 G_min=0.0485 -> full-collapse
+  escalation cap=0.20 dur=   200: tiers=1 first_tell=None G_min=0.2231 -> no-collapse
+  escalation cap=0.20 dur=  1600: tiers=1 first_tell=None G_min=0.2231 -> no-collapse
+  escalation cap=0.40 dur=    40: tiers=1 first_tell=194.70000000000002 G_min=0.0485 -> full-collapse
+  escalation cap=0.40 dur=   200: tiers=1 first_tell=None G_min=0.3201 -> no-collapse
+  escalation cap=0.40 dur=  1600: tiers=1 first_tell=None G_min=0.3201 -> no-collapse
+  escalation cap=0.80 dur=    40: tiers=1 first_tell=None G_min=0.1482 -> no-collapse
+  escalation cap=0.80 dur=   200: tiers=1 first_tell=None G_min=0.4667 -> no-collapse
+  escalation cap=0.80 dur=  1600: tiers=1 first_tell=None G_min=0.4667 -> no-collapse
+[19:43:15] PART 5: structural bound
+  D_max(A): {'0.0': 0.5454545454545454, '0.2': 0.6666666666666666, '0.5': 0.761904761904762, '0.8': 0.8148148148148149, '1.2': 0.8571428571428572, '2.0': 0.9019607843137254}
+  Theta_eff(S) = 0.8*S: {'0.15': 0.12, '0.4': 0.32000000000000006, '0.7': 0.5599999999999999, '0.9': 0.7200000000000001, '0.9525': 0.762, '0.9545': 0.7636000000000001, '1.0': 0.8}
+  minimum S_hold preventing collapse at the canonical dose: 0.657010498046875 (bracket [0.6566,0.6574])
+  S held 0.9545, dur=400 int=1.0 pulse=1.0: G_min=0.1106 E_max=0.6144 Teff_min=0.6400 c_max=0.000 -> no-collapse
+  S held 0.9545, dur=400 int=1.0 pulse=2.0: G_min=0.1116 E_max=0.7052 Teff_min=0.6400 c_max=0.000 -> no-collapse
+  S held 0.9545, dur=400 int=1.0 pulse=5.0: G_min=0.0561 E_max=0.8471 Teff_min=0.6400 c_max=1.000 -> partial-transient
+  S held 0.9545, dur=800 int=1.0 pulse=1.0: G_min=0.1082 E_max=0.6144 Teff_min=0.6400 c_max=0.000 -> no-collapse
+  UNARMED dur=400 int=1.0 pulse=1.0: G_min=0.0448 -> full-collapse
+  UNARMED dur=400 int=1.0 pulse=2.0: G_min=0.0452 -> full-collapse
+[19:43:35] ALL DONE in 422s -> /home/jaye/thing/report/corpus/armed-run-scratch/out/results.json
